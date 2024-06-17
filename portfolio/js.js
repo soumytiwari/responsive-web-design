@@ -11,7 +11,7 @@ function stopMusic() {
 }
 
 // typewriter-effect
-function typeWriter(element, text, delay = 100, callback) {
+function typeWriter(element, text, delay = 100, callback, repeat = false, cycleDelay = 2000) {
     let i = 0;
     let direction = 'forward';
 
@@ -28,7 +28,11 @@ function typeWriter(element, text, delay = 100, callback) {
             element.textContent = text.substring(0, i--);
             if (i < 0) {
                 direction = 'forward';
-                setTimeout(type, 1000); // Pause after erasing
+                if (repeat) {
+                    setTimeout(type, cycleDelay); // Delay before restarting
+                } else if (callback) {
+                    setTimeout(callback, 1000); // Delay before calling callback
+                }
             } else {
                 setTimeout(type, delay / 2); 
             }
@@ -39,8 +43,7 @@ function typeWriter(element, text, delay = 100, callback) {
 }
 
 const typewriter1 = document.querySelector(".typewriter1");
-typeWriter(typewriter1, "Tiwari");
-
+typeWriter(typewriter1, "Tiwari", 100, null, true, 2000); // Adjust cycleDelay as needed
 
 const typewriter2 = document.querySelector(".typewriter2");
 const words = ["web developer", "designer", "coder", "programmer", "tech enthusiast"];
@@ -49,8 +52,8 @@ let wordIndex = 0;
 function loopWords() {
     typeWriter(typewriter2, words[wordIndex], 80, () => {
         wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(loopWords, 1500); // Add a delay before the next word
-    });
+        setTimeout(loopWords, 1000); // Add a delay before starting the next word
+    }, false, 2000); // Adjust cycleDelay as needed
 }
 
 loopWords();

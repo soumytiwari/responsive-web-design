@@ -11,20 +11,20 @@ body {
         url(https://i-p.rmcdn.net/65638d5ee91e4a0021d51a69/image-1e1b8104-3424-41be-bf06-d49b561a5d0b.png) 2x
     ), auto;
     background-color: #ffe6f2;
-    overflow: hidden;
+    overflow: hidden; /* Hide the scrollbar */
 }
 
 .scroll-wrapper {
     height: 100vh;
     overflow-y: scroll; /* Enable vertical scrolling */
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    overscroll-behavior: contain;
 }
 
 .scroll-wrapper::-webkit-scrollbar {
-    width: 0; /* For Chrome, Safari, and Opera */
+    width: 0; /* Hide scrollbar in Chrome, Safari, and Opera */
 }
-
 
 p {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -37,6 +37,9 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure nav is on top */
 }
 
 nav img {
@@ -46,9 +49,8 @@ nav img {
     top: 33px;
     left: 13px;
     border: 6.5px solid transparent;
-    /* background: rgba(237, 216, 232, 0.132);  */
     background: rgba(255, 255, 255, 0.6); 
-    box-shadow: 2px 1px 20px 13px rgba(255, 255, 255, 0.6)
+    box-shadow: 2px 1px 20px 13px rgba(255, 255, 255, 0.6);
 }
 
 #navbar .links a {
@@ -60,24 +62,11 @@ nav img {
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     position: relative;
-    top: 38%;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
 }
-
-/* type-writting */
-#welcome-section {
-    font-family: monospace;
-    text-align: center;
-    margin-top: 100px;
-
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    top: 300px;
-}
-/* type-writting */
 
 @media (max-width: 768px) {
-
     nav {
         height: 23vh;
     }
@@ -91,12 +80,27 @@ nav img {
         padding: 5px 10px;
         font-size: 17px;
         font-weight: bold;
-        top: 40%;
+        top: 50%;
     }
 }
 
-#navbar {
-    position: fixed;
-    top: 0;
+#welcome-section {
+    font-family: monospace;
+    text-align: center;
+    padding-top: 35vh; /* Adjust to ensure content starts below the navbar */
+    min-height: 100vh;
+    width: 100vw;
+    position: relative; /* Changed from absolute */
 }
 
+#projects {
+    padding-top: 20px;
+}
+
+#experience {
+    padding-top: 20px;
+}
+
+#contact {
+    padding-top: 20px;
+}
