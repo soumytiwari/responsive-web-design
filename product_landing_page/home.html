@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Product Landing Page</title>
+</head>
+<body>
+    <div class="scroll-wrapper">
+        <header id="header" class="change-color">
+            <img id="header-img" src="https://assets-global.website-files.com/5e6a544cadf84b1393e2e022/623c3f2a0530e3c59a920938_01_Giant_Owl_Animated_Logo_by_Alphabetical_on_BPO.gif" alt="logo">
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="#header" class="nav-link change-color">Home</a></li>
+                    <li><a href="#features" class="nav-link change-color">Features</a></li>
+                    <li><a href="#about" class="nav-link change-color">About</a></li>
+                    <li><a href="#pricing" class="nav-link change-color">Pricing</a></li>
+                    <li><a href="#contact" class="nav-link change-color">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Rest of your content here -->
+
+    </div>
+
+    <script>
+        let isScrolling;
+        
+        const elementsToChange = document.querySelectorAll('.change-color');
+
+        window.addEventListener('scroll', () => {
+            elementsToChange.forEach(el => el.classList.add('changed'));
+
+            window.clearTimeout(isScrolling);
+
+            isScrolling = setTimeout(() => {
+                elementsToChange.forEach(el => el.classList.remove('changed'));
+            }, 500); // Delay to revert the changes after scrolling stops
+        }, false);
+    </script>
+</body>
+</html>

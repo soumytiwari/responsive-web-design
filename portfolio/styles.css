@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    cursor: -webkit-image-set(
+        url(https://i-p.rmcdn.net/65638d5ee91e4a0021d51a69/image-1e1b8104-3424-41be-bf06-d49b561a5d0b.png?w=26) 1x,
+        url(https://i-p.rmcdn.net/65638d5ee91e4a0021d51a69/image-1e1b8104-3424-41be-bf06-d49b561a5d0b.png) 2x
+    ), auto;
+    background-color: #ffe6f2;
+    overflow: hidden;
+}
+
+.scroll-wrapper {
+    height: 100vh;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+    width: 0; /* For Chrome, Safari, and Opera */
+}
+
+
+p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav {
+    background-color: #ff3396;
+    width: 100vw;
+    height: 33vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav img {
+    border-radius: 50%;
+    width: 150px;
+    position: absolute;
+    top: 33px;
+    left: 13px;
+    border: 6.5px solid transparent;
+    /* background: rgba(237, 216, 232, 0.132);  */
+    background: rgba(255, 255, 255, 0.6); 
+    box-shadow: 2px 1px 20px 13px rgba(255, 255, 255, 0.6)
+}
+
+#navbar .links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-right: 50px;
+    padding: 8px 16px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    top: 38%;
+}
+
+/* type-writting */
+#welcome-section {
+    font-family: monospace;
+    text-align: center;
+    margin-top: 100px;
+
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 300px;
+}
+/* type-writting */
+
+@media (max-width: 768px) {
+
+    nav {
+        height: 23vh;
+    }
+
+    nav img {
+        width: 124px;
+    }
+
+    #navbar .links a {
+        margin-right: 23px;
+        padding: 5px 10px;
+        font-size: 17px;
+        font-weight: bold;
+        top: 40%;
+    }
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+}
+

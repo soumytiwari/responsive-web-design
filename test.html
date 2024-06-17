@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect</title>
+    <style>
+        .typewriter {
+            border-right: 0.15em solid #000;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome-section">
+        <h1>Hey I am Soumya <span class="typewriter1 typewriter"></span></h1>
+        <p>a <span class="typewriter2 typewriter"></span></p>
+    </div>
+
+    <script>
+        function typeWriter(element, text, delay = 100, callback) {
+            let i = 0;
+            let isErasing = false;
+
+            function type() {
+                if (!isErasing) {
+                    element.textContent = text.substring(0, i++);
+                    if (i > text.length) {
+                        isErasing = true;
+                        setTimeout(type, 1000); // Pause after writing
+                    } else {
+                        setTimeout(type, delay);
+                    }
+                } else {
+                    element.textContent = text.substring(0, --i);
+                    if (i === 0) {
+                        isErasing = false;
+                        if (callback) {
+                            callback(); // Execute the callback after erasing the word
+                        }
+                        setTimeout(type, 1000); // Pause after erasing
+                    } else {
+                        setTimeout(type, delay / 2);
+                    }
+                }
+            }
+
+            type();
+        }
+
+        const typewriter1 = document.querySelector(".typewriter1");
+        typeWriter(typewriter1, "Tiwari");
+
+        const typewriter2 = document.querySelector(".typewriter2");
+        const words = ["web developer", "designer", "coder", "programmer", "tech enthusiast"];
+        let wordIndex = 0;
+
+        function loopWords() {
+            typeWriter(typewriter2, words[wordIndex], 80, () => {
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(loopWords, 1500); // Add a delay before the next word
+            });
+        }
+
+        loopWords();
+    </script>
+</body>
+</html>

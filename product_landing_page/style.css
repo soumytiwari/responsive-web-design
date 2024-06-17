@@ -1,0 +1,9 @@
+/* styles.css */
+.change-color {
+    transition: background-color 1s, color 1s; /* Smooth transition */
+}
+
+.changed {
+    background-color: #f0f0f0; /* Example color */
+    color: #333; /* Example color */
+}
