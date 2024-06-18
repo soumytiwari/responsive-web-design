@@ -11,7 +11,6 @@ function stopMusic() {
 }
 
 // typewriter-effect
-// js.js
 function typeWriter(element, text, delay = 100, callback, repeat = false, cycleDelay = 2000) {
     let i = 0;
     let direction = 'forward';
@@ -43,7 +42,6 @@ function typeWriter(element, text, delay = 100, callback, repeat = false, cycleD
     type();
 }
 
-
 // navigation-bar disappearing
 document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById("navbar");
@@ -74,3 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loopWords();
 });
+
+// navbar effect
+
