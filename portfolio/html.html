@@ -8,43 +8,104 @@
 </head>
 <body>
     <div class="scroll-wrapper">
-        <nav id="navbar">
-            <div class="image">
-                <img src="kitty.png" alt="hi there" onmouseover="playMusic()" onmouseout="stopMusic()"/>
-            </div>
-            <div class="links">
-                <a href="#welcome-section">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#experiences">Experience</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
+        <header>
+            <nav id="navbar">
+                <div class="image">
+                    <img src="kitty.png" alt="hi there" onmouseover="playMusic()" onmouseout="stopMusic()"/>
+                </div>
+                <div class="links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#experiences">Experience</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
 
         <div id="welcome-section">
-            <h1>Hey I am Soumya <span class="typewriter1"></span></h1>
-            <p>a <span class="typewriter2"></span></p>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <h1>Hey I am Soumya <span class="typewriter1"></span></h1>
+                    </div>
+                    <div class="card-back">
+                        <p>a <span class="typewriter2"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="about">
+            <h2>About Me</h2>
+            <p>Brief introduction about self.</p>
         </div>
 
         <div id="projects">
-            <h1>Projects</h1>
-            <div class="project-tile">Project Lorem ipsum dolor sit amet.
-                <a href="proj"></a>
+            <h2>Projects</h2>
+            <div class="project-tile">
+                <h3>Project Title</h3>
+                <p>Description of the project.</p>
+                <p>Technologies used: HTML, CSS, JavaScript</p>
+                <a href="proj" target="_blank">View on Github</a>
             </div>
+            <div class="project-tile">
+                <h3>Project Title</h3>
+                <p>Description of the project.</p>
+                <p>Technologies used: HTML, CSS, JavaScript</p>
+                <a href="proj" target="_blank">View on Github</a>
+            </div>
+            <div class="project-tile">
+                <h3>Project Title</h3>
+                <p>Description of the project.</p>
+                <p>Technologies used: HTML, CSS, JavaScript</p>
+                <a href="proj" target="_blank">View on Github</a>
+            </div>
+            <div class="project-tile">
+                <h3>Project Title</h3>
+                <p>Description of the project.</p>
+                <p>Technologies used: HTML, CSS, JavaScript</p>
+                <a href="proj" target="_blank">View on Github</a>
+            </div>
+            <!-- Add more projects tiles -->
         </div>
 
         <div id="experience">
-            <!-- Add content for experience here -->
+            <h2>Experience</h2>
+            <div class="experience-tile">
+                <h3>Job Title</h3>
+                <p>Company Name</p>
+                <p>Duration</p>
+                <p>Brief description of your role and achievements.</p>
+            </div>
+            <!-- Add more experience tiles as needed -->
         </div>
 
-        <footer id="contact">
+        <div id="skills">
+            <h2>Skills</h2>
+            <p>HTML, CSS, JavaScript, React, Node.js, etc.</p>
+        </div>
+
+        <div id="contact">
+            <h2>Contact</h2>
+            <div>
+                <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>   
+            </div>
+            <div>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn Profile</a></p>             
+            </div>
             <div>
                 <i>github icon</i>
-                <a id="profile-link" href="githu..ved" target="_blank">Github</a>
+                <p>GitHub: <a href="https://github.com/your-github" target="_blank">GitHub Profile</a></p>              
             </div>
             <div>
                 <i>freecodecamp icon</i>
                 <a href="prinkofile-l">freeCodeCamp</a>
             </div>
+        </div>
+
+        <footer>
+            <p>© 2024 Soumya Tiwari. All rights reserved.</p>
         </footer>
     </div>
     <script src="js.js"></script>

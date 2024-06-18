@@ -11,6 +11,7 @@ function stopMusic() {
 }
 
 // typewriter-effect
+// js.js
 function typeWriter(element, text, delay = 100, callback, repeat = false, cycleDelay = 2000) {
     let i = 0;
     let direction = 'forward';
@@ -42,18 +43,34 @@ function typeWriter(element, text, delay = 100, callback, repeat = false, cycleD
     type();
 }
 
-const typewriter1 = document.querySelector(".typewriter1");
-typeWriter(typewriter1, "Tiwari", 100, null, true, 2000); // Adjust cycleDelay as needed
 
-const typewriter2 = document.querySelector(".typewriter2");
-const words = ["web developer", "designer", "coder", "programmer", "tech enthusiast"];
-let wordIndex = 0;
+// navigation-bar disappearing
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+    const aboutSection = document.getElementById("about");
 
-function loopWords() {
-    typeWriter(typewriter2, words[wordIndex], 80, () => {
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(loopWords, 1000); // Add a delay before starting the next word
-    }, false, 2000); // Adjust cycleDelay as needed
-}
+    window.addEventListener("scroll", () => {
+        const aboutSectionTop = aboutSection.getBoundingClientRect().top;
+        if (aboutSectionTop < 0) {
+            navbar.classList.add("navbar-hidden");
+        } else {
+            navbar.classList.remove("navbar-hidden");
+        }
+    });
 
-loopWords();
+    const typewriter1 = document.querySelector(".typewriter1");
+    typeWriter(typewriter1, "Tiwari", 100, null, true, 2000); // Adjust cycleDelay as needed
+
+    const typewriter2 = document.querySelector(".typewriter2");
+    const words = ["web developer", "designer", "coder", "programmer", "tech enthusiast"];
+    let wordIndex = 0;
+
+    function loopWords() {
+        typeWriter(typewriter2, words[wordIndex], 80, () => {
+            wordIndex = (wordIndex + 1) % words.length;
+            loopWords();
+        }, false, 2000); // Adjust cycleDelay as needed
+    }
+
+    loopWords();
+});
