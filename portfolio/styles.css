@@ -210,9 +210,80 @@ h1, p {
     padding-top: 20px;
 }
 
+/* Contact section */
+
+#contact {
+    /* background-color: #4c3478; */
+    background: linear-gradient(135deg, #333, #4c3478);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: azure;
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #bfa6ee;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#contact div {
+    margin: 15px 0;
+}
+
+#contact p {
+    font-size: 1.2em;
+}
+
+#contact a {
+    color: #bfa6ee;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
 #contact {
     padding-top: 20px;
 }
+
+.imageG, .imageL {
+    width: 25px;
+}
+
+.imageF {
+    width: 120px;
+}
+
+.fllex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* contact section ends */
+
+/* footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+/* footer end */
 
 /* media */
 @media (max-width: 768px) {
