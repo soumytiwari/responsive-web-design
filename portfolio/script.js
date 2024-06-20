@@ -42,20 +42,7 @@ function typeWriter(element, text, delay = 100, callback, repeat = false, cycleD
     type();
 }
 
-// navigation-bar disappearing
 document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.getElementById("navbar");
-    const aboutSection = document.getElementById("about");
-
-    window.addEventListener("scroll", () => {
-        const aboutSectionTop = aboutSection.getBoundingClientRect().top;
-        if (aboutSectionTop < 0) {
-            navbar.classList.add("navbar-hidden");
-        } else {
-            navbar.classList.remove("navbar-hidden");
-        }
-    });
-
     const typewriter1 = document.querySelector(".typewriter1");
     typeWriter(typewriter1, "Tiwari", 100, null, true, 2000); // Adjust cycleDelay as needed
 
@@ -73,5 +60,32 @@ document.addEventListener("DOMContentLoaded", () => {
     loopWords();
 });
 
-// navbar effect
+// Add ripple effect to links
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll('.links a');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const rect = link.getBoundingClientRect();
+            const ripple = document.createElement('span');
+
+            const diameter = Math.max(link.clientWidth, link.clientHeight);
+            const radius = diameter / 2;
+
+            ripple.style.width = ripple.style.height = `${diameter}px`;
+            ripple.style.left = `${e.clientX - rect.left - radius}px`;
+            ripple.style.top = `${e.clientY - rect.top - radius}px`;
+            ripple.classList.add('ripple');
+
+            const rippleElement = link.querySelector('.ripple');
+
+            if (rippleElement) {
+                rippleElement.remove();
+            }
+
+            link.appendChild(ripple);
+        });
+    });
+});
+
 
