@@ -330,7 +330,67 @@ h1, p {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.imageG:hover, .imageL:hover, .imageF:hover {
+    border-radius: 5px;
+    border: 6.5px solid transparent;
+    background: rgba(255, 255, 255, 0.6); 
+    box-shadow: 2px 1px 20px 13px rgba(255, 255, 255, 0.6);
+}
 /* contact section ends */
+
+/* Experience section */
+#experience {
+    padding: 50px 0;
+    background: #282326; /* Match the color scheme */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.experience-card {
+    background: linear-gradient(135deg, #4c3478, #333); /* Gradient background */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px;
+    max-width: 100%;
+    text-align: center;
+    color: azure;
+    cursor: pointer;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.experience-content {
+    padding: 20px;
+}
+
+.experience-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #bfa6ee; /* Accent color */
+}
+
+.experience-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: azure;
+}
+
+.experience-duration {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #bfa6ee; /* Accent color */
+}
+
+
 
 /* footer */
 footer {
